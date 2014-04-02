@@ -1,0 +1,5 @@
+Django==1.5.1
+django-tastypie==0.9.16
+python-mimeparse==0.1.4
+simplejson==2.5.2
+south==0.8.4

@@ -1,0 +1,12 @@
+from django.conf import settings
+import os
+
+print "Starting.."
+
+if hasattr(settings, "KEYHOLE"):
+    print os.getcwd()
+    for model in settings.KEYHOLE["models"]:
+        print model.rpartition('.')
+
+    # modules = map(__import__, settings.KEYHOLE["models"])
+    pass

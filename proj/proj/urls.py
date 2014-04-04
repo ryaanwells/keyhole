@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 from tastypie.api import Api
+from keyhole.setup import register
 from mock.resources import UserResource, PicturesResource, AudioResource, FeedResource
 
 api = Api()
@@ -12,6 +13,8 @@ api.register(UserResource())
 api.register(PicturesResource())
 api.register(AudioResource())
 api.register(FeedResource())
+
+register(UserResource())
 
 urlpatterns = patterns('',
     # Examples:

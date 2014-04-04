@@ -1,0 +1,4 @@
+from models import Resources
+
+def register(resource):
+    print resource

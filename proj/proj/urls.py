@@ -5,16 +5,17 @@ from django.contrib import admin
 admin.autodiscover()
 
 from tastypie.api import Api
-from keyhole.setup import register
+from keyhole.setup import Keyhole
 from mock.resources import UserResource, PicturesResource, AudioResource, FeedResource
 
 api = Api()
+kh = Keyhole()
 api.register(UserResource())
 api.register(PicturesResource())
 api.register(AudioResource())
 api.register(FeedResource())
 
-register(UserResource())
+kh.register(api)
 
 urlpatterns = patterns('',
     # Examples:
@@ -27,4 +28,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(api.urls)),
+    url(r'^', include(kh.urls)),
 )
+

@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "keyhole.methods", "fields": {"name": "GET"}}, {"pk": 2, "model": "keyhole.methods", "fields": {"name": "POST"}}, {"pk": 3, "model": "keyhole.methods", "fields": {"name": "PATCH"}}, {"pk": 4, "model": "keyhole.methods", "fields": {"name": "PUT"}}, {"pk": 5, "model": "keyhole.methods", "fields": {"name": "DELETE"}}]

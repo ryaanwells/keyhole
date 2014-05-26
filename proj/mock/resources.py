@@ -6,7 +6,7 @@ from models import Pictures, Audio, Feed
 
 class UserResource(ModelResource):
     class Meta():
-        keyhole = ['GET']
+        keyhole = ['get']
         queryset = User.objects.all()
         resource_name = 'user'
         authorization = Authorization()

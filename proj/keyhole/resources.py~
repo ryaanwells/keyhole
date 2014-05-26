@@ -1,0 +1,2 @@
+from tastypie.resources import ModelResource
+from tastypie import fields

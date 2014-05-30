@@ -1,5 +1,5 @@
 from models import Resources, Methods, Key
-from resources import ResourcesResource, MethodsResource, KeyResource, UserResource
+from resources import ResourcesResource, MethodsResource, KeyResource
 from tastypie.api import Api
 
 
@@ -37,7 +37,6 @@ class Keyhole(object):
         api.register(ResourcesResource())
         api.register(MethodsResource())
         api.register(KeyResource())
-        api.register(UserResource())
         return api.urls
 
         

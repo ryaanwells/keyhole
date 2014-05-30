@@ -48,6 +48,6 @@ class Key(models.Model):
         super(Key, self).save()
 
     def __unicode__(self):
-        return "hello" #self.user.username #"{} - {}".format(self.user.username, self.locks.name)
+        return self.user.username #"{} - {}".format(self.user.username, self.locks.name)
     
 

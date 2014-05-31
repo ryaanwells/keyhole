@@ -6,11 +6,12 @@ from tastypie.authentication import BasicAuthentication
 from django.contrib.auth.models import User
 
 from models import Resources, Methods, Key
+from authorization import KeyholeAuthorization
 
 class MethodsResource(ModelResource):
     class Meta():
         queryset = Methods.objects.all()
-        
+        allowed_methods = ['GET']
         resource_name = 'methods'
         authorization = Authorization()
         always_return_data = True
@@ -20,6 +21,7 @@ class ResourcesResource(ModelResource):
     allowed_methods = fields.ToManyField(MethodsResource, 'allowed_methods', full=True)
     class Meta():
         queryset = Resources.objects.all()
+        allowed_methods = ['GET']
         resource_name = 'resources'
         authorization = Authorization()
         always_return_data = True
@@ -32,7 +34,7 @@ class KeyResource(ModelResource):
     class Meta():
         queryset = Key.objects.all()
         resource_name = 'key'
-        authorization = Authorization()
+        authorization = KeyholeAuthorization()
         authentication = BasicAuthentication()
         always_return_data = True
         include_resource_uri = True

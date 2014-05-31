@@ -1,0 +1,10 @@
+from tastypie.authorization import Authorization
+from tastypie.exceptions import Unauthorized
+
+class KeyholeAuthorization(Authorization):
+
+    def base_checks(self, request):
+        return hasattr(request, 'user')
+
+    def read_list(self, object_list, bundle):
+        
